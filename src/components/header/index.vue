@@ -25,19 +25,16 @@ export default {
   .headerUl{
     width: 375px;
     height: 44px;
-    line-height: 44px;
-    position: absolute;
-    top: 0;
-    left: 0;
     font-size: 0;
     background: #fff;
     box-shadow: 0 2px 4px 0 rgba(0,0,0,0.10);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
   }
   .headerUl > li {
-    display: inline-block;
     font-size: 16px;
     color: #71777D;
-    padding-left: 20px;    
   }
   li.systemSearchBox{
     padding-left: 60px;
