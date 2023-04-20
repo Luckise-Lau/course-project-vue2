@@ -1,15 +1,21 @@
 <template>
-  <div>
-    <HeaderVue></HeaderVue>
-    <!-- 课程分类 -->
-    <ul class="courseClassify">
-      <li v-for="(courseItem, index) in courseClassifyList" :key="index">
-        <img :src="courseItem.courseImgUrl">
-        <span>{{ courseItem.courseName }}</span>
-      </li>
-    </ul>
-    <!-- 课程列表 -->
-    <CourseVue :courseList="courseList"></CourseVue>
+  <div class="homePageContainer">
+    <!-- 头部 -->
+    <HeaderVue class="pageHeader"></HeaderVue>
+    <!-- 中间 -->
+    <div class="middleMain">
+      <!-- 课程分类 -->
+      <ul class="courseClassify">
+        <li v-for="(courseItem, index) in courseClassifyList" :key="index">
+          <img :src="courseItem.courseImgUrl">
+          <span>{{ courseItem.courseName }}</span>
+        </li>
+      </ul>
+      <!-- 课程列表 -->
+      <CourseVue :courseList="courseList"></CourseVue>
+    </div>
+    <!-- 底部导航 -->
+    <FooterNavVue class="pageFooter"></FooterNavVue>
   </div>
 </template>
 
@@ -31,6 +37,9 @@ import CourseImgTwo from '@/assets/courseTwo.jpg'
 import CourseImgThree from '@/assets/courseThree.jpg'
 import CourseImgFour from '@/assets/courseFour.jpg'
 import CourseImgFive from '@/assets/courseFive.jpg'
+
+// 底部导航
+import FooterNavVue from '@/components/Footer/'
 
 export default {
   name: 'HomePage',
@@ -105,12 +114,30 @@ export default {
   },
   components: {
     HeaderVue,
-    CourseVue
+    CourseVue,
+    FooterNavVue
   }
 }
 </script>
 
 <style scoped>
+  .homePageContainer{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  .pageHeader{
+    height: 44px;
+    width: 100%;
+  }
+  .pageFooter{
+    height: 49px;
+    width: 100%;
+  }
+  .middleMain{
+    flex-grow: 1;
+    overflow: auto;
+  }
   .courseClassify{
     height: 100px;
     display: flex;

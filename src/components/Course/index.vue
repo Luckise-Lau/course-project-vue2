@@ -1,12 +1,14 @@
 <template>
   <ul>
-    <li class="courseItemLi" v-for="(courseItem, index) in courseList" :key="index">
-      <img :src="courseItem.courseImg">
-      <div class="courseInfo">
-        <h2>{{ courseItem.courseName }}</h2>
-        <p>{{ courseItem.courseRemark }}</p>
-      </div>
-    </li>
+    <router-link to="/detail">
+      <li class="courseItemLi" v-for="(courseItem, index) in courseList" :key="index">
+        <img :src="courseItem.courseImg">
+        <div class="courseInfo">
+          <h2>{{ courseItem.courseName }}</h2>
+          <p>{{ courseItem.courseRemark }}</p>
+        </div>
+      </li>
+    </router-link>
   </ul>
 </template>
 

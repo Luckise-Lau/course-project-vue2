@@ -1,5 +1,5 @@
 <template>
-  <div id="app">    
+  <div id="app">
     <router-view/>
   </div>
 </template>
@@ -10,5 +10,8 @@
   margin: 0;
   list-style: none;
   box-sizing: border-box;
+}
+a{
+  text-decoration: none;
 }
 </style>
